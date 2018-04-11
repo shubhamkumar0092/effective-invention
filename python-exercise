@@ -1,6 +1,23 @@
-Write a Python program to get the Python version you are using.
-
+#Write a Python program to get the Python version you are using?
 import sys;
 print("Python Version is: "+ sys.version);
 print(sys.version_info);
 
+#Write a Python program to display the current date and time?
+from datetime import  datetime;
+from datetime import date,time;
+print("Current Date is: "+ str(date.today()));
+print("Current Time is: "+ str(datetime.time(datetime.today())))
+#print("DateTime: "+ str(datetime.today()));
+
+#Write a Python program which accepts the user's first and last name and print them in reverse order with a space between them.
+firstName=input("Enter First Name: ");
+lastName=input("Enter Last Name: ");
+name=firstName+lastName;
+print("Reversed Name: "+ lastName + " " + firstName);
+
+#Write a Python program to accept a filename from the user and print the extension of that
+fileName=input("Enter the filename with extension: ")
+list=fileName.split('.');
+print("The file extension or file type is: "+ str(list[1]));
+#print ("The extension of the file is : " + repr(list[-1]))
