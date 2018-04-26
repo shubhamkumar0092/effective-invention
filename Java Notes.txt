@@ -1,6 +1,6 @@
 Note: A class cannot be private or protected except nested class.
 
-
+Non Access Modifiers in Java -> Static, Final, Abstract
 
 Method Overloading:-
 
@@ -54,4 +54,8 @@ Try for Output
   
   Methods -> hashcode(), equals()
   
-  put 
+  put(set) , get(retrieve) 
+  
+* Collection Classes 
+  -> java.util package - fail-fast
+  -> java.util.concurrent package - fail-safe (No Exception)
