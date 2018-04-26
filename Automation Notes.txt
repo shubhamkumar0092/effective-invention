@@ -1,0 +1,40 @@
+Stale Element Exceptions ->
+
+Stale Element means an old element or no longer available element. 
+Assume there is an element that is found on a web page referenced as a WebElement in WebDriver. If the DOM changes then the WebElement goes stale
+
+Desired capabilities->>>
+Desired capabilities are a set of key-value pairs that are used for storing or configuring browser specific properties like its version, 
+platform etc in the browser instances.
+
+smoke and sanity testing ---->>>>>
+Smoke testing(Build Verification Testing) is a wide approach where all areas of the software application are tested without getting into too deep.  The results of this testing is used to decide if a build is stable enough to proceed with further testing.
+However, a sanity software testing is a narrow regression testing with a focus on one or a small set of areas of functionality of the software application.
+
+skip a @Test method from execution in TestNG?
+throw new SkipException("Skipping - This is not ready for testing ");
+
+30. What is the use of @Test(invocationCount=x)?
+
+The invocationcount attribute tells how many times TestNG should run a test method
+@Test(invocationCount = 10)
+public void testCase1(){
+//code
+}
+
+31. What is the use of @Test(threadPoolSize=x)?
+
+The threadPoolSize attribute tells to form a thread pool to run the test method through multiple threads.
+Note: This attribute is ignored if invocationCount is not specified
+@Test(threadPoolSize = 3, <code class="plain">invocationCount = </code><code class="value">10</code>) 
+public void testCase1(){
+//code
+}
+
+32. What does the test timeout mean in TestNG?
+
+The maximum number of milliseconds a test case should take.
+@Test(threadPoolSize = 3, invocationCount = 10,  timeOut = 10000)
+public void testCase1(){
+//code
+}

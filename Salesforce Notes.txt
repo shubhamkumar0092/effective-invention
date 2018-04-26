@@ -1,0 +1,396 @@
+https://resources.docs.salesforce.com/sfdc/pdf/salesforce_creating_on_demand_apps.pdf
+
+Quiz ->> https://www.proprofs.com/quiz-school/quizshow.php?title=salesforce-app-builder-review&q=24&next=y
+Try It Out: Give Fields Dynamic Default Values
+Using Formula Editor on the field.
+
+Try It Out: Define a Validation Rule for Min and Max Pay
+View Validation Rules and click New
+Enter Rule Name then formula or syntax
+Give Error Message if min> max
+
+
+Try It Out: Define a Validation Rule for Close Date
+Close Date is Not Specified AND (Status is "Closed- Filled" OR  "Closed - Not Approved")
+ISBLANK(Close_Date__c) && ISPICKVAL(Status__c, "Closed- Filled")
+ISBLANK(Close_Date__c) && TEXT(Status__c)= “Closed- Filled”
+
+Page Lay Out Rule :- 
+page layouts should never be used to restrict access to sensitive data that a user shouldn't view or edit
+
+Try It Out: Add Spaces Between Fields
+
+Try It Out: Edit Field Properties (Read only/Required)
+
+Introducing Compact Layouts  ->   You can only assign up to 10 fields to a compact layout.(Priority of fields to be seen)
+
+Try It Out: Assign the Primary Compact Layout
+
+Compact layouts are used in the mobile app and some Chatter feed items to display a record's key fields at a glance. 
+You can select and prioritize up to ten fields for the compact layout, but the number of fields that display may vary based 
+on the device's screen, which record page is being viewed, and the permissions of the user.
+
+lookup relationship field, which creates a simple relationship between two object
+ 
+Master-detail relationships create a special parent-child relationship between objects: the object on which
+you create the master-detail relationship field is the child or “detail,” and the object referenced in the field
+is the parent or “master.” In a master-detail relationship, the ownership and sharing of detail records are
+determined by the master record, and when you delete the master record, all of its detail records are
+automatically deleted along with it. Master-detail relationship fields are always required on detail records,
+and once you set a master-detail relationship field's value, you can't change it.
+
+Advance - “How Do I Access Schema Builder? in the Salesforce Help."
+
+Introducing Search Layouts
+
+Managing Review Assessments
+master-detail relationship field ->>>>>>> Review object has a many-to-one relationship with the Job Application object because one job
+application can have one or more reviews associated with it.
+
+Cross-object formulas are formulas that span two or more objects by referencing merge fields from related
+records.This means that formulas on our Review object can access fields on the Job Application object,
+and formulas on the Job Application object can access fields on both the Position and Candidate objects.
+
+Many-to-Many Relationships
+One position could be posted on many employment websites.
+One employment website could list many positions.
+
+JUNCTION OBJECT--->>> A junction object is a custom object with two master-detail relationships, and is the key to making a many-to-many relationship.
+
+<<<<Creating a Many-to-Many Relationship>>>> 
+
+Page - 142
+
+DOUBTS ---->>>>>>>>>>  IMPORTS  "Import Custom Objects"
+
+Data Access Concepts
+
+Object-Level Security - Security On whole object
+
+Field-Level Security - Security on Some fields of the given object
+
+Record-Level Security - 
+Organization-wide defaults
+allow us to specify the baseline level of access that a user has in your
+organization. For example, we can make it so that any user can see any record of a particular object
+to which their object permissions give them access, but so that they'll need extra permissions to
+actually edit one.
+•
+Role hierarchies
+ allow us to make sure that a manager will always have access to the same records
+as his or her subordinates.
+•
+Sharing rules
+ allow us to make automatic exceptions to organization-wide defaults for particular
+groups of users.
+•
+Manual sharing
+ allows record owners to give read and edit permissions to folks who might not
+have access to the record any other way.
+
+
+PROCESS BUILDER
+Automated processes in the Process Builder consist of:
+Criteria that determine when to execute action groups and
+Immediate and scheduled actions to execute when those criteria are met.
+
+
+
+http://www.salesforce-interviewquestions.com/p/interview-questions.html
+
+
+Salesforce Interview Questions-------------------------------------------------------
+1. Can two users have the same profile? Can two profiles be assigned to the same user?
+Profiles determine the level of access a user can have in a Salesforce org.
+
+As far as the first part of the question is concerned, Yes. One profile can be assigned to any number of users. Take the example of a Sales or Service team in a company. The entire team will be assigned the same profile. The admin can create one profile: Sales Profile, which will have access to the Leads, Opportunities, Campaigns, Contacts and other objects deemed necessary by the company.
+
+In this way, many users can be assigned the same profile. In case the team lead or manager need access to additional records/ objects then it can be done by assigning permission sets only for those users.
+
+Answering the second part of the question, each user can only be assigned 1 profile.
+
+
+
+14. What happens to detail record when a master record is deleted? What happens to child record when a parent record is deleted?
+In a Master-Detail relationship, when a master record is deleted, the detail record is deleted automatically (Cascade delete).
+
+In a Lookup relationship, even if the parent record is deleted, the child record will not be deleted.
+
+
+27. What is minimum test coverage required for trigger to deploy?
+In Salesforce, if you want to deploy your code to production, then you must make sure that at least 75% of your Apex code is covered by unit tests. And all these tests must complete successfully.
+
+
+24. What is the difference between a Role and Profile in Salesforce?
+As mentioned in one of the previous Salesforce interview questions, a profile will ultimately control access to which records a user has in a Salesforce org. No user can work on the Salesforce org without being assigned a profile. The Profile is therefore mandatory for every user.
+
+Role however is not mandatory for every user. The primary function of the Role/ Role hierarchy is that it allows higher level users in hierarchy get access to records owned by lower level users in the hierarchy. An example of that is Sales Managers getting access to records owned by Sales Reps while their peers do not get access to it.
+
+
+Q. What is the Apex Trigger in Salesforce? 
+Trigger is a Apex Code that executes before or after.
+The following types of DML Operation:
+1. Insert
+2. Update
+3. Delete
+4. Merge
+5. Upsert
+6..Updelete
+
+
+Q. What is TAB in Salesforce?
+Tab is a user interface component to user creates to display custom object data.
+There are three type of tabs.
+Custom Tabs
+Visual force Tabs
+Web Tabs
+
+Q.  How many ways we can made field is required?
+While creation of field
+Validation rules
+Page Layout level
+
+
+Q.  What is difference between Role and Profile?
+Role is Record level access and it is not mandatory for all users.
+Profile is object level and field level access and it is mandatory for all users.
+
+
+Q. How to create Master Details relationship between existing records?
+Directly we can’t create Master-Detail relationship between existing records, first we have to create Lookup relationship and provide valid lookup fields and it shouldn’t  null.
+
+
+Q. What is permission set?
+Permission sets extend user’s functional access without changing user’s profile.
+Ex:  A user has only read access through profile on custom object, administrator want to give access Edit and create operations to him without changing the profile. Administrator creates the permission set having edit and creates operation on custom object and assign to that user.
+
+
+Q. What is manual sharing?
+Manual sharing is to share a record to a particular user manually.
+Go to detail page of record and click on manual sharing button and assign that record to other user with Read or Read/Write access.
+Manual Sharing button enables only when OWD is private to that object.
+
+Q. Is check box performs like controlling field?
+Yes possible. Controlling field should be Check box or pick list.
+
+Q. What is Roll-up summary?
+Roll-up displays the count of child records and calculate the sum, min and max of fields of the child records.
+
+Q. How to create Roll-up summary field on lookup relation?
+Not possible. Roll-up summary is enabled for only Master –Detail relationship.
+
+Q. What are Record Types?
+Record Types are restrict the pick list values and assign to the different page layouts for different Record Types.
+
+
+5. What is “Master-Detail Relationship”?
+
+Master Detail relationship is the Parent child relationship. In which Master represents Parent and detail represents Child. If Parent is deleted then Child also gets deleted. Rollup summary fields can only be created on Master records which will calculate the SUM, AVG, MIN of the Child records.
+
+Up to 2 allowed to object.
+
+Parent field on child is required.
+
+Access to parent determines access to children.
+
+Deleting parent automatically deletes child.
+
+A child of one master detail relationship cannot be the parent of another.
+
+Lookup field on page layout is required.
+
+
+4.  What is a “Lookup Relationship”?
+
+This type of relationship links two objects together,
+
+Up to 25 allowed for object
+
+Parent is not a required field.
+
+No impact on a security and access.
+
+No impact on deletion.
+
+Can be multiple layers deep.
+
+Lookup field is not required.
+
+
+7.  A custom object contains some records, now my requirement is to create field in this object with master detail relationship. Can we create master detail relationship in this case?
+
+   No, directly we cannot create master details relationship if custom object contains existing records.
+
+   Following are the steps to create to create master-detail relationship when records are available in custom object.
+
+First create field with lookup relationship.
+And then associate look field with parent record for every record
+Next change the data type of the field from look up to Master detail.
+
+
+14. What is difference between trigger and workflow?
+
+Workflow
+
+Workflow is automated process that fired an action based on Evaluation criteria and rule criteria.
+
+We can access a workflow across the object.
+
+We cannot perform DML operation on workflow
+
+We cannot query from database
+
+Trigger
+
+Trigger is a piece of code that executes before or after a record is inserted or updated.
+
+We can access the trigger across the object and related to that objects
+
+We can use 20 DML operations in one trigger.
+
+We can use 20 SOQL’s from data base in one trigger.
+
+
+23.  How many ways we can made field is required?
+
+            1. While creation of field
+
+            2. Validation rules
+
+            3. Page Layout level
+			
+36. How many field dependencies we can use in Visual Force page?
+
+                Maximum we can use 10 field dependencies in VF page.
+
+What are the types of Sandboxes?
+Developer Sandbox
+Developer pro sandbox
+Partial data sandbox
+Full copy 
+
+
+
+How to Rename the tab?
+Tab name will be decided based on the Plural Label of the custom object, to rename go to corresponding object detail page and rename the plural label.
+
+5. What is the difference between ISBLANK() AND ISNULL()?
+ISNULL() works only for number data type fieds, if we don't populate with value for number fields it will return true.
+ISNULL() won't support TEXT data type fields because text fields never become null.
+ISBLANK() supports both number as well as text data types.
+
+7. What is the architecture of the salesforce
+MVC Architecutre - Model, View , Controller
+View - It is the user interface (Apps, Tabs, Page Layouts, Fields and Record Types)
+Controller - Business Logic (Save, Edit, New, Cancel and Delete - upon click on these button salesforce execute some logic from controller)
+Model - It is the Database, which stores Schema (Meta-Data(Data about Data) --> Apps, Tabs, sObjects, fields, Apex Classes, Visualforce pages, etc...) and Instance (Records)
+
+12. What are the type of tabs?
+Custom tabs (create for objects)
+Web tabs (create to display a website)
+Visual force tabs (create to display the visual force page)
+
+15. What are Governor Limits?
+Since we are working in multitenant environment Salesforce is enforcing the limits for all the functionalities.
+
+How many no of fields for an object: 500
+No of master detail relationships for an object: 2
+No of lookup relationship for an object: 25
+No of rollup summery fields: 25
+How many external ids we can enable for an object: 7 (increased from 3 to 7 in Winter-15)
+
+
+16. For which data type we can enable external id?
+text, number, auto number, email.
+
+	   
+1. Is it possible to delete the user in salesforce?
+No, once we create an user in salesforce we cannot delete the user record. We can only deactivate the user record.
+
+4. What is Profile?
+Profile deals with CRED (Create, Read, Edit and Delete) permissions over Apps, Tabs, sObjects, Fields, Record Types, etc...
+We can map only one profile for one user and without mapping the profile we cannot create the user.
+
+11. What is Grant Access Using Hierarchies?
+Say there are three roles
+
+Role A
+Role B
+Role C
+Role A is higher in hierarchy, Role B is in middle and Role C is lower in hierarchy
+
+If the Role A user through Manual Sharing or Sharing Rules, shares the record to Role C user who is in lower hierarchy, then the Role B user who is above in hierarchy to Role C user can see the records, if we enable Grant Access Using Hierarchies at sharing settings else Role B user cannot see the record.
+
+2. What is the difference between Created and everytime edited to meet the criteria and Created and edited to subsequently meet the criteria?
+If we select 'Created and everytime edited to meet the criteria' whenever we create a record or edit a record if the criteria of the
+ workflow rule meets then it will trigger every time.
+ If we select 'Created and edited to subsequently meet the criteria' -
+While creating the record criteria meets so that workflow will fire and while editing the record again criteria meets workflow won't
+ fire (meeting the criteria to meeting the criteria)
+While creating the record criteria doesn't meet so workflow won't fire and while editing the record workflow criteria meets then workflow will
+ fire (not meeting the criteria to meeting the criteria)
+Conclusion: Previous state of record should be not meeting criteria and current state of record should be meeting the criteria 
+then only in current state workflow will fire.
+
+8. What are the types of email templates?
+Text
+HTML (with letter head)
+Custom HTML (without letter head)
+Visual Force
+
+15. Scenario: After activating the approval process, I want to add one more step. Is it possible?
+It’s not possible, to add one more step deactivate the approval process and clone the deactivated approval process and add the new steps.
+
+3. How many blocks we can create for join reports?
+5 blocks.
+
+How many maximum groupings we can do for summary, matrix and join reports?
+3 groupings
+
+6. How many records we can display on page for a report?
+We can display up to 2000 records on a page. If more records are there to display we cannot see those through user interface. If you export the records to a excel sheet then you can export up to to 50000 records.
+
+
+
+	   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

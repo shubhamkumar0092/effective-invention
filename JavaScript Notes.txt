@@ -1,0 +1,165 @@
+
+JavaScript is Case Sensitive:
+   The variables lastName and lastname, are two different variables.
+   
+JavaScript Data Types
+
+In JavaScript there are 5 different data types that can contain values:
+
+    string
+    number
+    boolean
+    object
+    function
+
+There are 3 types of objects:
+
+    Object
+    Date
+    Array
+
+And 2 data types that cannot contain values:
+
+    null
+    undefined
+
+
+JavaScript can "display" data in different ways:
+
+    Writing into an HTML element, using innerHTML.
+    Writing into the HTML output using document.write().
+    Writing into an alert box, using window.alert().
+    Writing into the browser console, using console.log().
+
+JavaScript ignores multiple spaces
+  The following lines are equivalent:
+     var person = "Hege";
+     var person="Hege";
+	 
+Allowed 
+    a = 5; b = 6; c = a + b;
+	
+JavaScript Values
+	Fixed values are called "LITERALS". Variable values are called "VARIABLES".
+	
+Strings are text, written within double or single quotes: "Shubham" or 'Shubham'
+
+Comments :
+   Code after double slashes // or between /* and */ is treated as a comment.
+   
+   // This is a comment
+   /*This is also  a comment*/
+   /* This is a multi line 
+     comment*/
+
+JavaScript Identifiers:
+
+All JavaScript variables must be identified with unique names. These unique names are called identifiers.
+
+Operators:
+
+!== 	       not equal value or not equal type
+=== 	       equal value and equal type
+== 	           equal to
+!= 	           not equal
+
+typeof    	   Returns the type of a variable
+instanceof 	   Returns true if an object is an instance of an object type
+
+JavaScript Objects: 
+      var person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
+The object (person) in the example above has 4 properties: firstName, lastName, age, and eyeColor.
+
+
+Difference Between Undefined and Null:
+Undefined and null are equal in value but different in type:
+
+typeof undefined           // undefined
+typeof null                // object
+
+null === undefined         // false
+null == undefined          // true 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

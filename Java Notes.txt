@@ -1,0 +1,57 @@
+Note: A class cannot be private or protected except nested class.
+
+
+
+Method Overloading:-
+
+   class A{  
+    protected void msg(){System.out.println("Hello java");}  
+    }  
+      
+    public class Simple extends A{  
+    void msg(){System.out.println("Hello java");}//C.T.Error  
+	//The default modifier is more restrictive than protected. That is why there is compile time error.
+     public static void main(String args[]){  
+       Simple obj=new Simple();  
+       obj.msg();  
+       }  
+    }  
+
+	
+Rule: Runtime polymorphism can't be achieved by data members.
+
+class Bike{  
+ int speedlimit=90;  
+}  
+class Honda3 extends Bike{  
+ int speedlimit=150;  
+  
+ public static void main(String args[]){  
+  Bike obj=new Honda3();  
+  System.out.println(obj.speedlimit);//90  
+} 
+
+Try for Output
+
+    class Animal{  
+    void eat(){System.out.println("animal is eating...");}  
+    }  
+    class Dog extends Animal{  
+    void eat(){System.out.println("dog is eating...");}  
+    }  
+    class BabyDog1 extends Dog{  
+    public static void main(String args[]){  
+    Animal a=new BabyDog1();  
+    a.eat();  
+    }}  
+
+
+* Iterator is thread safe, if modified throws "Concurrent Modification Exception"
+
+* Hash Map :-
+
+  Key-Value -> Map.Entry
+  
+  Methods -> hashcode(), equals()
+  
+  put 
