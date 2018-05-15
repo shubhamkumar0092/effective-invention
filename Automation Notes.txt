@@ -721,3 +721,38 @@ Sample Output extent.html:-
 	</body>
 </html>
 
+
+34. ReportNG
+
+package com.demo.testcases;
+
+import org.apache.log4j.Logger;
+import org.testng.Assert;
+import org.testng.Reporter;
+import org.testng.annotations.Test;
+
+import com.demo.base.TestBaseClass;
+
+public class PorpTestCase extends TestBaseClass{
+
+	@Test
+	public void verifyGooglePageTittle() {
+		System.out.println("Exceution Started in PorpTestCase");
+		System.setProperty("org.uncommons.reportng.escape-output", "false");
+		// log.debug will add customize and application logs in the log files /src/test/resources/logs/files
+		log.debug("Inside PorpTestCase Test");
+		//Reporter log will add customize message in ReportNG
+		Reporter.log("Inside PorpTestCase Test");
+		//System.out.println(Url);
+		//driver.navigate().to(Url);
+		String getTitle = driver.getTitle();
+		Assert.assertEquals(getTitle, "Google");
+		System.out.println("Exceution has been done in PorpTestCase");
+		log.debug("PorpTestCase Test Successfully Executed");
+		Reporter.log("PorpTestCase Test Successfully Executed");
+		Reporter.log("<b><a target=\"_blank\" href=\"C:\\Users\\Administrator\\Downloads\\Error.png\">Screenshot_Failure</a>");
+		Reporter.log("<br>");
+		Reporter.log("<b><a target=\"_blank\" href=\"C:\\Users\\Administrator\\Downloads\\Error.png\"><img src=\"C:\\Users\\Administrator\\Downloads\\Error.png\" height=150 width=200></img></a>");
+	}
+}
+
