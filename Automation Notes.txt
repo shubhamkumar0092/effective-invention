@@ -41,6 +41,7 @@ public void testCase1(){
 //code
 }
 
+33. Extent Report in Selenium
 Maven Dependencies:-
 <!-- https://mvnrepository.com/artifact/com.relevantcodes/extentreports -->
 		<dependency>
