@@ -2,6 +2,8 @@ Note: A class cannot be private or protected except nested class.
 
 Non Access Modifiers in Java -> Static, Final, Abstract
 
+A Java constructor cannot be abstract, static, final, and synchronized
+
 Method Overloading:-
 
    class A{  
@@ -59,3 +61,51 @@ Try for Output
 * Collection Classes 
   -> java.util package - fail-fast
   -> java.util.concurrent package - fail-safe (No Exception)
+  
+*  https://www.programmingsimplified.com/java-source-codes
+  
+  Java program to get IP address
+  
+  import java.net.InetAddress;
+ 
+class IPAddress
+{
+  public static void main(String args[]) throws Exception
+  {
+    System.out.println(InetAddress.getLocalHost());
+  }
+}
+
+Java program to perform garbage collection
+
+import java.util.*;
+ 
+class GarbageCollection
+{
+  public static void main(String s[]) throws Exception
+  {
+    Runtime rs = Runtime.getRuntime();
+    System.out.println("Free memory in JVM before Garbage Collection = "+rs.freeMemory());
+    rs.gc();
+    System.out.println("Free memory in JVM after Garbage Collection = "+rs.freeMemory());
+  }
+}
+
+Java program to open Notepad
+
+import java.util.*;
+import java.io.*;
+ 
+class Notepad {
+  public static void main(String[] args) {
+    Runtime rs = Runtime.getRuntime();
+ 
+    try {
+      rs.exec("notepad");
+    }
+    catch (IOException e) {
+      System.out.println(e);
+    }
+  }
+}
+
