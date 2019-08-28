@@ -1,0 +1,19 @@
+  git init
+
+	git status
+  
+  git add fileName, git add * [Add all files]
+
+	git commit -m "commit message" fileToBeAdded.txt 
+  
+   git log, git log --oneline
+
+	git diff fileName
+
+	git reset --soft HEAD^  [Takes to 1 commit past]
+
+	git reset --soft HEAD^^ [Takes to 2 commit past]
+
+	git reset HEAD . [Takes all file from Staging to Working dir]
+
+	[Soft Reset will bring commit to statging area to make changes but Hard Reset will directly go to working dir. without going to statging area]
