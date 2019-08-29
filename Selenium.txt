@@ -1,0 +1,194 @@
+Application program interface (API) is a set of routines, protocols, and tools for building software applications.
+
+Testing Framework:-------
+Module Based Testing Framework
+Library Architecture Testing Framework
+Data Driven Testing Framework
+Keyword Driven Testing Framework
+Hybrid Testing Framework
+Behavior Driven Development Framework
+
+Summary:--------
+The entire Selenium Tool Suite is comprised of four components:
+Selenium IDE, a Firefox add-on that you can only use in creating relatively simple test cases and test suites.
+Selenium Remote Control, also known as Selenium 1, which is the first Selenium tool that allowed users to use 
+programming languages in creating complex tests.
+WebDriver, the newer breakthrough that allows your test scripts to communicate directly to the browser, thereby controlling it from the OS level.
+Selenium Grid is also a tool that is used with Selenium RC to execute parallel tests across different browsers and operating systems.
+Selenium RC and WebDriver was merged to form Selenium 2.
+Selenium is more advantageous than QTP in terms of costs and flexibility. It also allows you to run tests in parallel, 
+unlike in QTP where you are only allowed to run tests sequentially.
+
+Base URL :- 
+
+ http://newtours.demoaut.com
+ 
+http://selenium-release.storage.googleapis.com/index.html
+
+id,name,class,xpath,link,partial link,css selector,value
+================================================================================
+Q: How would you fill a text field without calling the sendKeys()?
+
+Ans. It's a bit slower than the sendKeys() method but we do have means to type in a text field. See the Java code given below.
+
+Java
+
+JavascriptExecutor JS = (JavascriptExecutor)webdriver;
+JS.executeScript("document.getElementById(User').value='admin@testmail.com'");
+JS.executeScript("document.getElementById('Pass').value='######'");
+
+JavascriptExecutor JS = (JavascriptExecutor)webdriver;
+ 
+JS.executeScript("document.getElementById(User').value='admin@testmail.com'");
+ 
+JS.executeScript("document.getElementById('Pass').value='######'");
+
+--------------------------------------------------------------------------------
+
+
+		/*DesiredCapabilities capabilities = DesiredCapabilities.firefox();
+		
+		capabilities.setCapability(CapabilityType.BROWSER_NAME,"FIREFOX");
+		
+	//	capabilities.setCapability(FirefoxDriver.PROFILE,true);
+		DesiredCapabilities.firefox();*/
+		
+		try {
+		     System.setProperty("webdriver.gecko.driver",
+				"C:\\Users\\Shubham Kumar\\Downloads\\geckodriver-v0.17.0-win64\\geckodriver.exe");
+			
+			FirefoxOptions options = new FirefoxOptions();
+			options.setBinary("C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe"); //Location where Firefox is installed
+	 
+			DesiredCapabilities capabilities = DesiredCapabilities.firefox();
+			capabilities.setCapability("moz:firefoxOptions", options);
+			
+			FirefoxDriver driver = new FirefoxDriver(options);
+			
+			//WebDriver driver =  new FirefoxDriver();
+			//set more capabilities as per your requirements
+	 
+			/*FirefoxDriver driver = new FirefoxDriver(capabilities);
+			driver.get("http://www.google.com");
+			
+			FirefoxOptions options = new FirefoxOptions();
+			
+			//options.setBinary("C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe"); //This is the location where you have installed Firefox on your machine
+ 
+			FirefoxDriver driver = new FirefoxDriver(options);
+			
+			//WebDriver driver =  new FirefoxDriver();
+*/			
+			driver.get("http://www.amazon.in");
+			
+			System.out.println("Congrats your first project passed");
+		} catch (SessionNotCreatedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		//driver.quit();
+		
+	}
+
+----------------------------------------------------------------------------------------------------	
+
+
+
+
+Interview preparation and practice sites:-
+
+http://www.geeksforgeeks.org/java/
+
+https://www.hackerrank.com/domains/java/java-introduction 
+
+
+=====================================================================================
+Demo Sites for Automation :-
+
+http://www.way2automation.com
+
+http://demoqa.com/
+
+http://automationpractice.com/index.php
+
+http://www.phptravels.net/
+
+http://phptravels.com/
+
+http://thedemosite.co.uk/index.php
+
+http://www.seleniumeasy.com/test/
+
+--------------------------------------------------------------------
+
+When submit() is used, WebDriver will look up the DOM to know which form the element belongs to, and then trigger its submit function.
+
+--------------------------------------------------------------------------------------------
+<input id="email" class="inputtext" name="email" value="" tabindex="1" data-testid="royal_email" type="email">
+
+<input id="pass" class="inputtext" name="pass" tabindex="2" data-testid="royal_pass" type="password">
+
+css=input#email
+
+
+    Tag and ID  ---> css=tag#id ---> css=input#email 
+    Tag and class ---> css=tag.class ---> css=input.inputtext
+    Tag and attribute ---> css=tag[attribute=value] ---> css=input[id=email]
+    Tag, class, and attribute ---> tag.class[attribute=value] ---> css=input.inputtext[id=email]
+    Inner text ---> css=tag:contains("inner text") ---> css=font:contains("Password:")
+	
+	
+xpath-- /html/body/div/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[2]/td[3]/form/table/tbody/tr[11]/td[2]/img
+
+
+The three most commonly used commands in verifying page elements are:
+
+verifyElementPresent/ verifyElementNotPresent
+
+verifyTextPresent/ verifyTextNotPresent
+
+verifyElementPositionLeft/ verifyElementPositionTop
+
+Wait commands are classified into two:
+       
+	   andWait commands - used when a page is expected to be loaded
+		   clickAndWait
+           typeAndWait
+           selectAndWait
+
+        waitFor commands - used when no new page is expected to be loaded
+            
+         waitForTitle
+         waitForTextPresent
+         waitForAlert
+		 
+		 
+The 5 different exceptions you had in Selenium web drivers are
+
+    WebDriverException
+    NoAlertPresentException
+    NoSuchWindowException
+    NoSuchElementException
+    TimeoutException
+
+Question-17: What Is The Mechanism To Handle Multiple Popups In Selenium?
+
+Answer:
+
+Multiple popups can be handled by using the command getWindowHandles().
+
+Then store all the window names into Set<String> variable and transform it into an array.
+
+Next, by using the array index, you can navigate to specific window by using
+
+Java
+
+driver.switchTo().window(ArrayIndex);
+1
+driver.switchTo().window(ArrayIndex);
+ 	
+	
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
